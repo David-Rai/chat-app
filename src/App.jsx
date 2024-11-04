@@ -53,7 +53,7 @@ const App = () => {
       {/* Messages */}
       {created ? (
         <div className="h-screen w-full relative p-2">
-          <div className="h-[90vh] w-full overflow-y-hidden">
+          <div className="h-[90vh] w-full overflow-y-auto">
             {messages && messages.map((m, index) =>
                <div key={index} 
                className={`flex w-full 
