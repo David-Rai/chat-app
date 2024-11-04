@@ -19,6 +19,10 @@ const App = () => {
     client.on("message", (message) => {
       setMessages((prevMessages) => [...prevMessages, message]);
     });
+        //client on leave message
+    client.on('leave-message',message=>{
+      alert(`${message} leaved`)
+    })
   }, [client]);
 
   //joining the room
@@ -45,16 +49,16 @@ const App = () => {
    };
 
   return (
-    <main className="h-screen w-full flex items-center justify-center bg-slate-200">
+    <main className="overflow-hidden h-screen w-full flex items-center justify-center bg-slate-200">
       {/* Messages */}
       {created ? (
         <div className="h-screen w-full relative p-2">
-          <div className="h-[90vh] w-full">
+          <div className="h-[90vh] w-full overflow-y-hidden">
             {messages && messages.map((m, index) =>
                <div key={index} 
                className={`flex w-full 
                ${m.sender_id == client.id ? "justify-end" : "justify-start"}`}>
-                <p className="bg-gray-400 px-2 m-2 rounded-l">{m.message}</p>
+                <p className="bg-white shadow-md px-2 m-2 rounded-lg">{m.message}</p>
                 </div>)}
           </div>
 
