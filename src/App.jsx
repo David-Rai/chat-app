@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { io } from "socket.io-client";
 
 const App = () => {
-  const [client] = useState(() => io("http://localhost:1111/")); // Only initialize once
+  const [client] = useState(() => io("https://chat-app-server-p0cr.onrender.com/")); // Only initialize once
   const nameRef = useRef(null);
   const [created, setCreated] = useState(false);
   const [messages, setMessages] = useState([]);
