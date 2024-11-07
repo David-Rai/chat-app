@@ -63,7 +63,9 @@ const App = () => {
           </div>
 
           {/* sending */}
-          <div className="w-full absolute bottom-[20%] left-0 h-[10vh] bg-slate-200 flex items-center justify-around">
+          <div className="w-full absolute 
+           md:bottom-0
+            bottom-[20%] left-0 h-[10vh] bg-slate-200 flex items-center justify-around">
             <input
               type="text"
               placeholder="send message"
